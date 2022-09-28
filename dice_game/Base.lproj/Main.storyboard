@@ -1,24 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="dice_game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Nxq-yh-LUI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="143" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-WR-32g">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-Ci-JYa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="337.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="8Gm-0U-5ex">
+                                                <rect key="frame" x="0.0" y="83.5" width="206.5" height="170.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="btX-PE-hPe" userLabel="Right Dice Image View">
+                                                <rect key="frame" x="207.5" y="83.5" width="206.5" height="170.5"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNq-G0-Jr7">
+                                        <rect key="frame" x="0.0" y="480.5" width="414" height="337.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-ts-nIF" userLabel="Roll Button">
+                                                <rect key="frame" x="133.5" y="144" width="147" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Ls7-BN-k2B"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="vZt-7K-2SU"/>
+                                                </constraints>
+                                                <buttonConfiguration key="configuration" style="plain" title="REROLL THE DICE ">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <color key="strokeColor" systemColor="systemBlueColor"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="rollButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LMI-AQ-2TJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cX2-ts-nIF" firstAttribute="centerX" secondItem="gNq-G0-Jr7" secondAttribute="centerX" id="8Rg-YH-PIE"/>
+                                            <constraint firstItem="cX2-ts-nIF" firstAttribute="centerY" secondItem="gNq-G0-Jr7" secondAttribute="centerY" id="qT0-a4-Bhh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nxq-yh-LUI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7cU-DM-3kJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Nxq-yh-LUI" secondAttribute="bottom" id="7hG-kU-AEd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K8D-WR-32g" secondAttribute="bottom" id="BuC-n2-uyy"/>
+                            <constraint firstAttribute="trailing" secondItem="K8D-WR-32g" secondAttribute="trailing" id="IkE-Cp-9Sm"/>
+                            <constraint firstItem="K8D-WR-32g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kv3-sc-l8g"/>
+                            <constraint firstItem="K8D-WR-32g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vav-3h-PYP"/>
+                            <constraint firstItem="Nxq-yh-LUI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j2J-t1-Xpj"/>
+                            <constraint firstAttribute="trailing" secondItem="Nxq-yh-LUI" secondAttribute="trailing" id="tcg-LN-5TO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="leftDiceImageView" destination="8Gm-0U-5ex" id="DtZ-NU-PE2"/>
+                        <outlet property="rightDiceImageView" destination="btX-PE-hPe" id="IT0-cX-G54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="666.5" height="444"/>
+        <image name="dice1" width="170.5" height="170.5"/>
+        <image name="dice2" width="170.5" height="170.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
